@@ -20,8 +20,8 @@ authors:
     email: ningkang@hust.edu.cn
     orcid: "https://orcid.org/0000-0003-3325-5387"
     affiliation: "Huazhong University of Science and Technology"
-repository-code: "https://github.com/Verture-Liu/2026summerproject"
-url: "https://verture-liu.github.io/2026summerproject/"
+repository-code: "https://github.com/Verture-Liu/PaleoRigor"
+url: "https://verture-liu.github.io/PaleoRigor/"
 abstract: >-
   PaleoRigor is a local, human-in-the-loop system that converts a natural-language
   research request into an explicit workflow built from predefined analysis

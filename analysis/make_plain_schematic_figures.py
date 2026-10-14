@@ -9,7 +9,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "Final data" / "manuscript_figures" / "plain_schematics"
+OUT = ROOT / "figures" / "manuscript" / "plain_schematics"
 
 INK = "#26313d"
 MUTED = "#65717f"

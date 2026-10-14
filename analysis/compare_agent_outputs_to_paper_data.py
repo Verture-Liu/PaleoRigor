@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import sys
 import re
 import zipfile
 from pathlib import Path
@@ -11,9 +12,10 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FINAL = ROOT / "Final data"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from result_paths import MANUSCRIPT_FIGURES, run_folder  # noqa: E402
 RAW = ROOT / "data" / "raw" / "reproducibility_cases"
-OUT = FINAL / "comparison_figures"
+OUT = MANUSCRIPT_FIGURES / "dataset_cases" / "comparison_source_data"
 
 
 ENA = {
@@ -80,7 +82,7 @@ def ensure_out() -> None:
 
 def read_agent_peptide() -> tuple[pd.DataFrame, pd.DataFrame]:
     raw = pd.read_csv(RAW / "case1_amplit_validation" / "Validation.csv", header=None, names=["label", "sequence"])
-    cleaned = pd.read_csv(FINAL / "1" / "final_outputs" / "cleaned_Validation.csv")
+    cleaned = pd.read_csv(run_folder("1") / "final_outputs" / "cleaned_Validation.csv")
     return raw, cleaned
 
 
@@ -150,7 +152,7 @@ def parse_fastqc_zip(path: Path) -> dict[str, float | str]:
 def fastqc_zips_for_run(run: str, groups: list[str]) -> list[Path]:
     zips: list[Path] = []
     for group in groups:
-        zips.extend(sorted((FINAL / group / "final_outputs").glob(f"{run}*_fastqc.zip")))
+        zips.extend(sorted((run_folder(group) / "final_outputs").glob(f"{run}*_fastqc.zip")))
     return zips
 
 

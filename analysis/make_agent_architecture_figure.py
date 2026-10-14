@@ -9,7 +9,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "Final data" / "manuscript_figures"
+OUT = ROOT / "figures" / "manuscript"
 
 COLORS = {
     "ink": "#1f2933",

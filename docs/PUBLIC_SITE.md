@@ -22,9 +22,9 @@ Then open <http://localhost:8765/>.
 
 For this repository, the expected project-site address is:
 
-<https://verture-liu.github.io/2026summerproject/>
+<https://verture-liu.github.io/PaleoRigor/>
 
-The first deployment may take several minutes. The website uses project-relative asset paths so it works beneath the `/2026summerproject/` GitHub Pages subpath.
+The first deployment may take several minutes. The website uses project-relative asset paths so it works beneath the `/PaleoRigor/` GitHub Pages subpath.
 
 ## Full local application
 

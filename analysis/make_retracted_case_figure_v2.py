@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import matplotlib as mpl
@@ -10,10 +11,11 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FINAL = ROOT / "Final data"
-RESULT = FINAL / "retracted_result"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from result_paths import MANUSCRIPT_FIGURES, run_folder  # noqa: E402
+RESULT = run_folder("retracted_result")
 RAW = ROOT / "data" / "raw" / "retracted_case" / "SRP508771_SRR29088443"
-OUT = FINAL / "retracted_case_figure_v2"
+OUT = MANUSCRIPT_FIGURES / "retraction_audit"
 
 COLORS = {
     "ink": "#1f2933",

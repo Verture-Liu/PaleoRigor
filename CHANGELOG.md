@@ -15,6 +15,17 @@ Repository and documentation clean-up; analysis code, prompts, data and run reco
 - `paleorigor/README.md` describes the current macOS and Windows builds and uses the tools' own names (seqtk, Bowtie 2).
 - Preregistrations, study plans and questions moved from `docs/science-superpowers/` to `study/`; development plans and notes moved from `docs/superpowers/` and `docs/research/` to `dev-notes/`, so the website folder holds only the website.
 
+- The repository is renamed from `2026summerproject` to `PaleoRigor`; links, clone commands, the website address
+  (https://verture-liu.github.io/PaleoRigor/) and the in-app GitHub link use the new name. The user guides
+  no longer show a developer's local path.
+- `Final data/` is split into `results/` (run folders of the dataset-level cases, named by case and accession)
+  and `figures/` (manuscript figures with their source data, and earlier drafts in `figures/development/`).
+  `results/README.md` maps every earlier folder name to its new path; the files themselves are unchanged.
+- The figure scripts read and write the new folders through `analysis/result_paths.py`; earlier manuscript
+  builders and draft-figure scripts moved to `analysis/archive/`.
+- Twelve FastQC archives under `analysis/benchmark_multimodel/v4_pro` are stored through Git LFS like the
+  other `.zip` files; their content is unchanged.
+
 ### Removed
 - Manuscript drafts, a temporary script and the generated `egg-info` folder are no longer tracked; they remain in the history of earlier releases.
 

@@ -14,7 +14,7 @@ from matplotlib.colors import LinearSegmentedColormap
 
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "Final data" / "manuscript_figures" / "benchmark_v5"
+OUT = ROOT / "figures" / "manuscript" / "benchmark_v5"
 BASE = OUT / "figure2_paleorigor_v5_benchmark"
 
 BLUE = "#2F6F92"

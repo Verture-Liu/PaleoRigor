@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import matplotlib as mpl
@@ -11,10 +12,11 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FINAL = ROOT / "Final data"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from result_paths import MANUSCRIPT_FIGURES, run_folder  # noqa: E402
 RAW = ROOT / "data" / "raw" / "reproducibility_cases"
-SOURCE = FINAL / "comparison_figures" / "comparison_source_data.csv"
-OUT = FINAL / "task_grouped_figures"
+SOURCE = MANUSCRIPT_FIGURES / "dataset_cases" / "comparison_source_data" / "comparison_source_data.csv"
+OUT = MANUSCRIPT_FIGURES / "dataset_cases"
 
 COLORS = {
     "ink": "#1f2933",
@@ -77,7 +79,7 @@ def strip(ax) -> None:
 
 def peptide_tables() -> tuple[pd.DataFrame, pd.DataFrame]:
     raw = pd.read_csv(RAW / "case1_amplit_validation" / "Validation.csv", header=None, names=["label", "sequence"])
-    cleaned = pd.read_csv(FINAL / "1" / "final_outputs" / "cleaned_Validation.csv")
+    cleaned = pd.read_csv(run_folder("1") / "final_outputs" / "cleaned_Validation.csv")
     return raw, cleaned
 
 

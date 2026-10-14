@@ -51,7 +51,7 @@ class PublicSiteTests(unittest.TestCase):
 
     def test_repository_links_are_direct(self):
         text = HTML.read_text(encoding="utf-8")
-        url = "https://github.com/Verture-Liu/2026summerproject"
+        url = "https://github.com/Verture-Liu/PaleoRigor"
         self.assertGreaterEqual(text.count(url), 2)
 
     def test_static_page_has_no_data_or_key_inputs(self):
