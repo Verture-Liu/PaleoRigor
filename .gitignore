@@ -15,3 +15,14 @@ build/
 *.tmp
 *.log
 .worktrees/
+
+# manuscript drafts and working files stay local, not in the public repository
+/*.docx
+/*.pdf
+/*.textClipping
+/VARIANT-*
+/tmp_*.py
+/实习证明*
+src/*.egg-info/
+Claude outputs/
+submission/

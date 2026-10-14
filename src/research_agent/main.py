@@ -93,7 +93,7 @@ def create_app(
     session_token: str | None = None,
     planner_client_factory: Callable[[], httpx.AsyncClient] | None = None,
 ) -> FastAPI:
-    app = FastAPI(title="Local Research Agent", version=APPLICATION_VERSION)
+    app = FastAPI(title="PaleoRigor", version=APPLICATION_VERSION)
     store = TaskStore(Path(task_root or "workspace/tasks"))
     registry = build_default_registry()
     web_dir = Path(__file__).parent / "web"

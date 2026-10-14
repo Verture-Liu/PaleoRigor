@@ -197,7 +197,7 @@ def _write_report(task_dir: Path, workflow, steps: list[dict], outputs: list[str
         f"<li>{html.escape(str(Path(path).name))}</li>" for path in outputs
     )
     page = (
-        "<!doctype html><html><head><meta charset='utf-8'><title>Research Agent Report</title></head>"
+        "<!doctype html><html><head><meta charset='utf-8'><title>PaleoRigor Report</title></head>"
         f"<body><h1>{html.escape(workflow.task_summary)}</h1>"
         f"<table><tr><th>Step</th><th>Skill</th><th>Status</th></tr>{rows}</table>"
         f"<h2>Outputs</h2><ul>{links}</ul></body></html>"

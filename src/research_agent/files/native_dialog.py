@@ -7,7 +7,7 @@ from pathlib import Path
 def _choose_macos() -> str:
     script = (
         'POSIX path of (choose folder with prompt '
-        '"Choose a Research Agent results folder")'
+        '"Choose a PaleoRigor results folder")'
     )
     result = subprocess.run(
         ["/usr/bin/osascript", "-e", script],
@@ -24,7 +24,7 @@ def _choose_windows() -> str:
     script = (
         "Add-Type -AssemblyName System.Windows.Forms; "
         "$dialog = New-Object System.Windows.Forms.FolderBrowserDialog; "
-        "$dialog.Description = 'Choose a Research Agent results folder'; "
+        "$dialog.Description = 'Choose a PaleoRigor results folder'; "
         "if ($dialog.ShowDialog() -eq 'OK') { $dialog.SelectedPath }"
     )
     result = subprocess.run(
@@ -41,7 +41,7 @@ def _choose_linux() -> str:
     if zenity is None:
         return ""
     result = subprocess.run(
-        [zenity, "--file-selection", "--directory", "--title=Choose a Research Agent results folder"],
+        [zenity, "--file-selection", "--directory", "--title=Choose a PaleoRigor results folder"],
         capture_output=True,
         text=True,
         check=False,

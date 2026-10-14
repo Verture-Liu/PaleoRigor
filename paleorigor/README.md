@@ -1,10 +1,8 @@
-# PaleoRigor desktop research prototypes
+# PaleoRigor desktop applications
 
 PaleoRigor is a local, browser-based research agent for reproducible
-paleomicrobiome and ancient-DNA data analysis. This folder contains the first
-Apple Silicon development build. Windows 10/11 x64 packaging source is also
-available; its installer remains a separate artifact so the macOS build is
-preserved.
+paleomicrobiome and ancient-DNA data processing. This folder contains the
+packaged applications for Apple Silicon macOS and for Windows 10/11 x64.
 
 ## Platforms
 
@@ -17,7 +15,7 @@ preserved.
 ## Download
 
 - `PaleoRigor-dev-arm64.dmg`
-- Version: `0.2.1-dev`
+- Version: `0.2.1` (development build)
 - Target: Apple Silicon (M-series Macs), macOS 13 or later
 
 ## Install and open
@@ -39,13 +37,13 @@ desktop shortcut. API keys are stored through Windows Credential Manager. See
 - FastQC 0.12.1
 - MultiQC 1.35
 - SeqKit 2.13.0
-- SeqTk 1.5-r133
+- seqtk 1.5-r133
 - Samtools 1.23.1 (macOS; the Windows build bundles 1.24)
 - BWA 0.7.19-r1273
-- Bowtie2 2.5.5
+- Bowtie 2 2.5.5
 
-The application does not require users to install VS Code, Python, Conda,
-Homebrew, Java, or these seven analysis tools.
+Users do not need to install Python, Conda, Java or these seven analysis tools
+separately.
 
 ## Verification
 
@@ -69,4 +67,4 @@ notarized by Apple. It is suitable for local development and limited testing.
 Formal public distribution requires Developer ID signing and notarization.
 
 The Windows development installer is likewise unsigned and may trigger Windows
-SmartScreen. Neither prototype should be described as a commercial release.
+SmartScreen. Neither build is a commercial release.

@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased
+
+Repository and documentation clean-up; analysis code, prompts, data and run records are unchanged.
+
+### Added
+- `README.md` at the repository root: what PaleoRigor does, downloads, running from source, repository layout and how to cite the preprint (doi:10.64898/2026.09.30.755547).
+- A link to the bioRxiv preprint on the website home page, and a `preferred-citation` entry in `CITATION.cff`.
+
+### Changed
+- `CITATION.cff` and `.zenodo.json` use the manuscript title; `CITATION.cff` lists the v0.2.2 archive DOI.
+- The desktop interface, its report pages, the folder-picker dialog and the user guides use the name PaleoRigor instead of "Research Agent".
+- The website test checks the frozen-evaluation figures now shown on the home page (23/24, 24/24, 96/96, 6/6).
+- `paleorigor/README.md` describes the current macOS and Windows builds and uses the tools' own names (seqtk, Bowtie 2).
+- Preregistrations, study plans and questions moved from `docs/science-superpowers/` to `study/`; development plans and notes moved from `docs/superpowers/` and `docs/research/` to `dev-notes/`, so the website folder holds only the website.
+
+### Removed
+- Manuscript drafts, a temporary script and the generated `egg-info` folder are no longer tracked; they remain in the history of earlier releases.
+
 ## 0.2.2 — 2026-09-30
 
 Archive-metadata release. Code, prompts, data and run records are identical to 0.2.1 (b1cc9c4).

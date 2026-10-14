@@ -39,8 +39,10 @@ class PublicSiteTests(unittest.TestCase):
     def test_verified_numbers_are_present(self):
         text = HTML.read_text(encoding="utf-8")
         for value in (
-            "12/12",
-            "1/4",
+            "23/24",
+            "24/24",
+            "96/96",
+            "6/6",
             "six public sequencing records",
             "114",
             "5,696",

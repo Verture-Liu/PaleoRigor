@@ -15,7 +15,7 @@ def test_macos_directory_chooser_uses_osascript(monkeypatch):
     assert selected == "/Users/example/Results"
     assert captured["command"][0] == "/usr/bin/osascript"
     assert "choose folder" in captured["command"][2]
-    assert "Choose a Research Agent results folder" in captured["command"][2]
+    assert "Choose a PaleoRigor results folder" in captured["command"][2]
 
 
 def test_macos_directory_chooser_returns_empty_when_cancelled(monkeypatch):

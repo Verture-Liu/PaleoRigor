@@ -23,7 +23,7 @@ def find_free_port(host: str = "127.0.0.1") -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Start the local Research Agent.")
+    parser = argparse.ArgumentParser(description="Start PaleoRigor locally.")
     parser.add_argument("--no-browser", action="store_true", help="Do not open a browser automatically.")
     parser.add_argument("--port", type=int, help="Use a fixed local port.")
     parser.add_argument(
