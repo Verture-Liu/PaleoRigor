@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/c8eec452797e448882e22293c40c672e/inputs/ERR4863268_1.fastq.gz",
+      "name": "ERR4863268_1.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 1857846,
+      "exists": true
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/c8eec452797e448882e22293c40c672e/inputs/ERR4863268_2.fastq.gz",
+      "name": "ERR4863268_2.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 1942752,
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T09:53:31+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERR6097630&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "ERR6097630",
+      "study_accession": "PRJEB42014",
+      "sample_accession": "SAMEA9232349",
+      "scientific_name": "oral metagenome",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "METAGENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "Illumina NovaSeq 6000",
+      "read_count": "165028",
+      "base_count": "15512632",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/ERR609/000/ERR6097630/ERR6097630_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR609/000/ERR6097630/ERR6097630_2.fastq.gz",
+      "fastq_bytes": "3106711;3426617",
+      "fastq_md5": "f16459e57d4f7f316bb3541975054fbc;e3857f33353878f31ef35aea156331e7",
+      "submitted_ftp": "ftp.sra.ebi.ac.uk/vol1/run/ERR609/ERR6097630/Ua088_R2_L2_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/run/ERR609/ERR6097630/Ua088_R2_L2_2.fastq.gz",
+      "submitted_bytes": "2908089;3226483",
+      "first_public": "2021-06-23",
+      "last_updated": "2021-06-23"
+    }
+  ]
+}

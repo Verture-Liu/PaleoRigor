@@ -1,0 +1,89 @@
+{
+  "records": 17,
+  "primary_reusable_as_catalogued": {
+    "k": 10,
+    "n": 17,
+    "percent": 58.8,
+    "wilson95": [
+      36.0,
+      78.4
+    ]
+  },
+  "checks": {
+    "C1_catalogue_files_equal_ena": {
+      "k": 16,
+      "n": 17,
+      "percent": 94.1,
+      "wilson95": [
+        73.0,
+        99.0
+      ]
+    },
+    "C2_catalogue_reads_equal_ena": {
+      "k": 17,
+      "n": 17,
+      "percent": 100.0,
+      "wilson95": [
+        81.6,
+        100.0
+      ]
+    },
+    "C3_download_intact": {
+      "k": 17,
+      "n": 17,
+      "percent": 100.0,
+      "wilson95": [
+        81.6,
+        100.0
+      ]
+    },
+    "C4_layout_consistent": {
+      "k": 14,
+      "n": 17,
+      "percent": 82.4,
+      "wilson95": [
+        59.0,
+        93.8
+      ]
+    },
+    "C5_reads_reproduced": {
+      "k": 11,
+      "n": 17,
+      "percent": 64.7,
+      "wilson95": [
+        41.3,
+        82.7
+      ]
+    }
+  },
+  "processing_state_counts": {
+    "unprocessed": 9,
+    "length_variable": 4,
+    "not_assessable": 2,
+    "not_run": 2
+  },
+  "length_variable_among_assessable": {
+    "k": 4,
+    "n": 13,
+    "percent": 30.8,
+    "wilson95": [
+      12.7,
+      57.6
+    ]
+  },
+  "paleorigor_outcomes": {
+    "executed": 15,
+    "blocked": 2,
+    "not_run": 0
+  },
+  "decision_agrees_with_C4": {
+    "k": 17,
+    "n": 17,
+    "percent": 100.0,
+    "wilson95": [
+      81.6,
+      100.0
+    ]
+  },
+  "uploaded_files_identical_to_download": 15
+}

@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T09:56:08+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR6933820&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "SRR6933820",
+      "study_accession": "PRJNA438985",
+      "sample_accession": "SAMN08737249",
+      "scientific_name": "Strigocuscus celebensis",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "GENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "Illumina MiSeq",
+      "read_count": "235197",
+      "base_count": "52666983",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/SRR693/000/SRR6933820/SRR6933820_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR693/000/SRR6933820/SRR6933820_2.fastq.gz",
+      "fastq_bytes": "20311742;22303536",
+      "fastq_md5": "817645859f9f2346a9ff5bce9d78bf9e;95ec32438a03c9bcbec1ed0c6dcff485",
+      "submitted_ftp": "",
+      "submitted_bytes": "",
+      "first_public": "2018-07-13",
+      "last_updated": "2018-07-13"
+    }
+  ]
+}

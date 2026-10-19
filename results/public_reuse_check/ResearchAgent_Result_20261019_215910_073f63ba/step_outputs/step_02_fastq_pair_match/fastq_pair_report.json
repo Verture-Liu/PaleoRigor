@@ -1,0 +1,10 @@
+{
+  "samples": [
+    {
+      "sample_id": "ERR6097630",
+      "layout": "paired",
+      "fastq_1": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/073f63baf7334f769f7afd7cc69da113/inputs/ERR6097630_1.fastq.gz",
+      "fastq_2": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/073f63baf7334f769f7afd7cc69da113/inputs/ERR6097630_2.fastq.gz"
+    }
+  ]
+}

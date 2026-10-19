@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/39c24f83bceb4ce78cd8f8c0d8208eb4/inputs/ERR1094779_1.fastq.gz",
+      "name": "ERR1094779_1.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 15943170,
+      "exists": true
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/39c24f83bceb4ce78cd8f8c0d8208eb4/inputs/ERR1094779_2.fastq.gz",
+      "name": "ERR1094779_2.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 16493333,
+      "exists": true
+    }
+  ]
+}

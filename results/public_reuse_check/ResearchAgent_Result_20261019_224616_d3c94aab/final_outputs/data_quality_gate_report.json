@@ -1,0 +1,45 @@
+{
+  "gate_passed": true,
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/d3c94aab6cb048d8aa47f6e5c114758a/inputs/SRR17604766_1.fastq.gz",
+      "name": "SRR17604766_1.fastq.gz",
+      "size_bytes": 6791795,
+      "format": "fastq",
+      "records": 285748,
+      "total_bases": 14573148,
+      "min_length": 51,
+      "max_length": 51,
+      "mean_length": 51.0,
+      "n_fraction": 1.5e-05,
+      "malformed_records": 0
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/d3c94aab6cb048d8aa47f6e5c114758a/inputs/SRR17604766_2.fastq.gz",
+      "name": "SRR17604766_2.fastq.gz",
+      "size_bytes": 6962974,
+      "format": "fastq",
+      "records": 285748,
+      "total_bases": 14573142,
+      "min_length": 45,
+      "max_length": 51,
+      "mean_length": 51.0,
+      "n_fraction": 2.1e-05,
+      "malformed_records": 0
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/d3c94aab6cb048d8aa47f6e5c114758a/inputs/SRR17604766.fastq.gz",
+      "name": "SRR17604766.fastq.gz",
+      "size_bytes": 777946,
+      "format": "fastq",
+      "records": 32854,
+      "total_bases": 1675530,
+      "min_length": 27,
+      "max_length": 51,
+      "mean_length": 50.999,
+      "n_fraction": 2e-05,
+      "malformed_records": 0
+    }
+  ],
+  "warnings": []
+}

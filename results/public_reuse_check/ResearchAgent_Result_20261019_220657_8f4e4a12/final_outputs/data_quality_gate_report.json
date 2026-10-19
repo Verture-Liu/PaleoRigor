@@ -1,0 +1,19 @@
+{
+  "gate_passed": true,
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/8f4e4a12cd64451298606fdb6f05ca18/inputs/ERR6589623.fastq.gz",
+      "name": "ERR6589623.fastq.gz",
+      "size_bytes": 27593255,
+      "format": "fastq",
+      "records": 195972,
+      "total_bases": 29753953,
+      "min_length": 25,
+      "max_length": 345,
+      "mean_length": 151.828,
+      "n_fraction": 0.0,
+      "malformed_records": 0
+    }
+  ],
+  "warnings": []
+}

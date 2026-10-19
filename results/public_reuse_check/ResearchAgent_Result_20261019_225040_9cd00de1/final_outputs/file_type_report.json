@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/inputs/ERR3579720_1.fastq.gz",
+      "name": "ERR3579720_1.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 3432525,
+      "exists": true
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/inputs/ERR3579720_2.fastq.gz",
+      "name": "ERR3579720_2.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 3460217,
+      "exists": true
+    }
+  ]
+}

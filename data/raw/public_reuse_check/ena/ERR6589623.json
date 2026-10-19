@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T09:59:27+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERR6589623&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "ERR6589623",
+      "study_accession": "PRJEB47251",
+      "sample_accession": "SAMEA9560351",
+      "scientific_name": "metagenome",
+      "library_layout": "SINGLE",
+      "library_strategy": "OTHER",
+      "library_source": "METAGENOMIC",
+      "instrument_platform": "ION_TORRENT",
+      "instrument_model": "Ion Torrent Proton",
+      "read_count": "195972",
+      "base_count": "29753953",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/ERR658/003/ERR6589623/ERR6589623.fastq.gz",
+      "fastq_bytes": "27593255",
+      "fastq_md5": "708e9fcc91c0471a96930cfd1de71b01",
+      "submitted_ftp": "ftp.sra.ebi.ac.uk/vol1/run/ERR658/ERR6589623/T3_nesk.bam;ftp.sra.ebi.ac.uk/vol1/run/ERR658/ERR6589623/T3_nesk.bam.bai",
+      "submitted_bytes": "114153350;16",
+      "first_public": "2021-10-28",
+      "last_updated": "2021-10-28"
+    }
+  ]
+}

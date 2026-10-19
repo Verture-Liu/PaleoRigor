@@ -1,0 +1,19 @@
+{
+  "gate_passed": true,
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9fcda875b6be40cb85742002afbad5eb/inputs/ERR11660455.fastq.gz",
+      "name": "ERR11660455.fastq.gz",
+      "size_bytes": 8915818,
+      "format": "fastq",
+      "records": 168845,
+      "total_bases": 10974925,
+      "min_length": 65,
+      "max_length": 65,
+      "mean_length": 65.0,
+      "n_fraction": 0.0,
+      "malformed_records": 0
+    }
+  ],
+  "warnings": []
+}

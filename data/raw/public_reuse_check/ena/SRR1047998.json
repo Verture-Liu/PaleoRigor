@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T10:00:26+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR1047998&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "SRR1047998",
+      "study_accession": "PRJNA230469",
+      "sample_accession": "SAMN02429347",
+      "scientific_name": "viral metagenome",
+      "library_layout": "SINGLE",
+      "library_strategy": "WGA",
+      "library_source": "METAGENOMIC",
+      "instrument_platform": "LS454",
+      "instrument_model": "454 GS FLX Titanium",
+      "read_count": "29811",
+      "base_count": "10679993",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/SRR104/008/SRR1047998/SRR1047998.fastq.gz",
+      "fastq_bytes": "3495628",
+      "fastq_md5": "49e0063ab03d034f657b465c73b396a2",
+      "submitted_ftp": "",
+      "submitted_bytes": "",
+      "first_public": "2017-10-17",
+      "last_updated": "2017-10-17"
+    }
+  ]
+}

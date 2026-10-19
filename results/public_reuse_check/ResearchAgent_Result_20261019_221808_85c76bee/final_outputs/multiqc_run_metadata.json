@@ -1,0 +1,9 @@
+{
+  "tool": "MultiQC",
+  "official_url": "https://multiqc.info/",
+  "tool_source": "bundle",
+  "inputs": [
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/85c76bee62174a2fa72af09f90c8a20c/steps/step_02/fastqc/SRR5047044_fastqc.zip"
+  ],
+  "report": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/85c76bee62174a2fa72af09f90c8a20c/steps/step_03/multiqc/multiqc_report.html"
+}

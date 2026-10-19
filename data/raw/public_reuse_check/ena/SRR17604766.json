@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T10:18:46+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR17604766&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "SRR17604766",
+      "study_accession": "PRJNA791766",
+      "sample_accession": "SAMN24342423",
+      "scientific_name": "human metagenome",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "METAGENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "Illumina NovaSeq 6000",
+      "read_count": "318602",
+      "base_count": "30821820",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/SRR176/066/SRR17604766/SRR17604766.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR176/066/SRR17604766/SRR17604766_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR176/066/SRR17604766/SRR17604766_2.fastq.gz",
+      "fastq_bytes": "777946;6791795;6962974",
+      "fastq_md5": "840b205e472345eb3da5f5891dabfb10;e328540b328c0ae5f2e81b6772a9bcf3;cb26cb61ce1020f07d0f0ba6f906b4cc",
+      "submitted_ftp": "",
+      "submitted_bytes": "",
+      "first_public": "2022-10-15",
+      "last_updated": "2022-10-15"
+    }
+  ]
+}

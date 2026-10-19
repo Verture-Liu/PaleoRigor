@@ -1,0 +1,3 @@
+run	reason_code	message	screenshot
+SRR2229975	missing_mate	AncientMetagenomeDir lists SRR2229975 as a paired-end library, but only one FASTQ file is present (SRR2229975.fastq). The named paired-end mate is absent, so mate pairing cannot be confirmed and the workflow cannot proceed without inventing or reusing a missing file.	results/public_reuse_check/SRR2229975.jpg
+SRR13355810	missing_mate	AncientMetagenomeDir lists SRR13355810 as paired-end, but only one FASTQ file was uploaded (SRR13355810.fastq). The paired-end mate is absent, so mate pairing cannot be confirmed and the requested workflow cannot proceed without inventing a file.	results/public_reuse_check/SRR13355810.jpg

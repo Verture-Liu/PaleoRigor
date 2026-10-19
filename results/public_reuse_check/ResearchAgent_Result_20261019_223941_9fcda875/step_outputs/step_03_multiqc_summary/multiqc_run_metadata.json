@@ -1,0 +1,9 @@
+{
+  "tool": "MultiQC",
+  "official_url": "https://multiqc.info/",
+  "tool_source": "bundle",
+  "inputs": [
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9fcda875b6be40cb85742002afbad5eb/steps/step_02/fastqc/ERR11660455_fastqc.zip"
+  ],
+  "report": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9fcda875b6be40cb85742002afbad5eb/steps/step_03/multiqc/multiqc_report.html"
+}

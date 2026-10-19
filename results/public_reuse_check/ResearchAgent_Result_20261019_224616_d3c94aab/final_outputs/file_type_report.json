@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/d3c94aab6cb048d8aa47f6e5c114758a/inputs/SRR17604766_1.fastq.gz",
+      "name": "SRR17604766_1.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 6791795,
+      "exists": true
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/d3c94aab6cb048d8aa47f6e5c114758a/inputs/SRR17604766_2.fastq.gz",
+      "name": "SRR17604766_2.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 6962974,
+      "exists": true
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/d3c94aab6cb048d8aa47f6e5c114758a/inputs/SRR17604766.fastq.gz",
+      "name": "SRR17604766.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 777946,
+      "exists": true
+    }
+  ]
+}

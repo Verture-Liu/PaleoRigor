@@ -1,0 +1,32 @@
+{
+  "gate_passed": true,
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/inputs/ERR3579720_1.fastq.gz",
+      "name": "ERR3579720_1.fastq.gz",
+      "size_bytes": 3432525,
+      "format": "fastq",
+      "records": 79655,
+      "total_bases": 5047236,
+      "min_length": 1,
+      "max_length": 76,
+      "mean_length": 63.364,
+      "n_fraction": 0.000139,
+      "malformed_records": 0
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/inputs/ERR3579720_2.fastq.gz",
+      "name": "ERR3579720_2.fastq.gz",
+      "size_bytes": 3460217,
+      "format": "fastq",
+      "records": 79655,
+      "total_bases": 5039927,
+      "min_length": 1,
+      "max_length": 76,
+      "mean_length": 63.272,
+      "n_fraction": 0.000137,
+      "malformed_records": 0
+    }
+  ],
+  "warnings": []
+}

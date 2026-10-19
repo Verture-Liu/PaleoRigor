@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T10:17:12+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERR1094779&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "ERR1094779",
+      "study_accession": "PRJEB11511",
+      "sample_accession": "SAMEA3635118",
+      "scientific_name": "Helicobacter pylori",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "METAGENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "Illumina HiSeq 2000",
+      "read_count": "237328",
+      "base_count": "47940256",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/009/ERR1094779/ERR1094779_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/009/ERR1094779/ERR1094779_2.fastq.gz",
+      "fastq_bytes": "15943170;16493333",
+      "fastq_md5": "c6b3a2b956b18a9e6b3cf93a1e32c01b;b8262717919970562eb700d00210f119",
+      "submitted_ftp": "ftp.sra.ebi.ac.uk/vol1/run/ERR109/ERR1094779/A1142_CTTGTA_L008_R1_001.fastq.gz;ftp.sra.ebi.ac.uk/vol1/run/ERR109/ERR1094779/A1142_CTTGTA_L008_R2_001.fastq.gz",
+      "submitted_bytes": "19500432;19938496",
+      "first_public": "2016-01-07",
+      "last_updated": "2018-11-16"
+    }
+  ]
+}

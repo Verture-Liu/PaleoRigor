@@ -1,0 +1,10 @@
+{
+  "samples": [
+    {
+      "sample_id": "ERR6589623",
+      "layout": "single",
+      "fastq_1": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/8f4e4a12cd64451298606fdb6f05ca18/inputs/ERR6589623.fastq.gz",
+      "fastq_2": ""
+    }
+  ]
+}

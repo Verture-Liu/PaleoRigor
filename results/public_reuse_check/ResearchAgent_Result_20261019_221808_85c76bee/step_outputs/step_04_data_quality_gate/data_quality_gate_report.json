@@ -1,0 +1,19 @@
+{
+  "gate_passed": true,
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/85c76bee62174a2fa72af09f90c8a20c/inputs/SRR5047044.fastq.gz",
+      "name": "SRR5047044.fastq.gz",
+      "size_bytes": 5142478,
+      "format": "fastq",
+      "records": 101826,
+      "total_bases": 7636950,
+      "min_length": 75,
+      "max_length": 75,
+      "mean_length": 75.0,
+      "n_fraction": 3e-06,
+      "malformed_records": 0
+    }
+  ],
+  "warnings": []
+}

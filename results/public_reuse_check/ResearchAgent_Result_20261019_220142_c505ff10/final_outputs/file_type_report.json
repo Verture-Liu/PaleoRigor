@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/c505ff10fb4a43d4a40636fecb8257e6/inputs/SRR6933820_2.fastq.gz",
+      "name": "SRR6933820_2.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 22303536,
+      "exists": true
+    },
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/c505ff10fb4a43d4a40636fecb8257e6/inputs/SRR6933820_1.fastq.gz",
+      "name": "SRR6933820_1.fastq.gz",
+      "format": "fastq",
+      "size_bytes": 20311742,
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T10:00:37+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR2229975&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "SRR2229975",
+      "study_accession": "PRJNA293758",
+      "sample_accession": "SAMN04015019",
+      "scientific_name": "Homo sapiens",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "GENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "Illumina HiSeq 2500",
+      "read_count": "132145",
+      "base_count": "8370665",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/SRR222/005/SRR2229975/SRR2229975.fastq.gz",
+      "fastq_bytes": "4239214",
+      "fastq_md5": "34a55be27b24dedf0745796d7ab66b53",
+      "submitted_ftp": "",
+      "submitted_bytes": "",
+      "first_public": "2016-08-26",
+      "last_updated": "2016-08-26"
+    }
+  ]
+}

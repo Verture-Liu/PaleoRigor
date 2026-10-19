@@ -1,0 +1,10 @@
+{
+  "samples": [
+    {
+      "sample_id": "SRR6933820",
+      "layout": "paired",
+      "fastq_1": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/c505ff10fb4a43d4a40636fecb8257e6/inputs/SRR6933820_1.fastq.gz",
+      "fastq_2": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/c505ff10fb4a43d4a40636fecb8257e6/inputs/SRR6933820_2.fastq.gz"
+    }
+  ]
+}

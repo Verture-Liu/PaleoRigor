@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T10:22:35+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERR3579720&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "ERR3579720",
+      "study_accession": "PRJEB34569",
+      "sample_accession": "SAMEA5971624",
+      "scientific_name": "Homo sapiens",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "METAGENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "NextSeq 500",
+      "read_count": "79655",
+      "base_count": "10087163",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/ERR357/000/ERR3579720/ERR3579720_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR357/000/ERR3579720/ERR3579720_2.fastq.gz",
+      "fastq_bytes": "3432525;3460217",
+      "fastq_md5": "97a6f7819f20339c434f6c078079f0d4;d981fe97f3473518043b0376bb444b95",
+      "submitted_ftp": "ftp.sra.ebi.ac.uk/vol1/run/ERR357/ERR3579720/DLV002.A0101_S0_L000_R1_000.trimmed.fastq.gz;ftp.sra.ebi.ac.uk/vol1/run/ERR357/ERR3579720/DLV002.A0101_S0_L000_R2_000.trimmed.fastq.gz",
+      "submitted_bytes": "3230454;3259378",
+      "first_public": "2021-04-27",
+      "last_updated": "2019-10-28"
+    }
+  ]
+}

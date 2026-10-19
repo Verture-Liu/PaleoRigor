@@ -1,0 +1,27 @@
+{
+  "tool": "FastQC",
+  "official_url": "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/",
+  "reviewed_skill_source": "https://github.com/ubcd-ibfg/fastq-qc-skill",
+  "inputs": [
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/inputs/ERR3579720_1.fastq.gz"
+  ],
+  "input_metrics": [
+    {
+      "path": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/inputs/ERR3579720_1.fastq.gz",
+      "name": "ERR3579720_1.fastq.gz",
+      "records": 79655,
+      "total_bases": 5047236,
+      "min_length": 1,
+      "max_length": 76,
+      "mean_length": 63.364,
+      "gc_percent": 62.085,
+      "n_fraction": 0.000139,
+      "malformed_records": 0
+    }
+  ],
+  "threads": 1,
+  "reports": [
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/steps/step_03/fastqc/ERR3579720_1_fastqc.html",
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/9cd00de1f859455ab0e8f77efccfdf6a/steps/step_03/fastqc/ERR3579720_1_fastqc.zip"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tool": "MultiQC",
+  "official_url": "https://multiqc.info/",
+  "tool_source": "bundle",
+  "inputs": [
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/82916baeff224098a93d0caf22380888/steps/step_03/fastqc/ERR2269804_1_fastqc.zip",
+    "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/82916baeff224098a93d0caf22380888/steps/step_04/fastqc/ERR2269804_2_fastqc.zip"
+  ],
+  "report": "/Users/tianaoliu/Library/Caches/PaleoRigor/tasks/82916baeff224098a93d0caf22380888/steps/step_05/multiqc/multiqc_report.html"
+}

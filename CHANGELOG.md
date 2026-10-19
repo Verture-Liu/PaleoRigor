@@ -8,6 +8,12 @@ Repository and documentation clean-up; analysis code, prompts, data and run reco
 - `README.md` at the repository root: what PaleoRigor does, downloads, running from source, repository layout and how to cite the preprint (doi:10.64898/2026.09.30.755547).
 - A link to the bioRxiv preprint on the website home page, and a `preferred-citation` entry in `CITATION.cff`.
 
+- Public-data reuse check (Case 4; Figure 6, Table S7): 17 AncientMetagenomeDir records chosen by the fixed rule in
+  `analysis/public_reuse_check/PROTOCOL.md`; their ENA reports, download log and FASTQ files in
+  `data/raw/public_reuse_check/`; the PaleoRigor run folders and the two refusal screenshots in
+  `results/public_reuse_check/`; the selection, download, summary and plotting scripts with source data in
+  `analysis/public_reuse_check/` and `figures/manuscript/public_reuse_check/`.
+
 ### Changed
 - `CITATION.cff` and `.zenodo.json` use the manuscript title; `CITATION.cff` lists the v0.2.2 archive DOI.
 - The desktop interface, its report pages, the folder-picker dialog and the user guides use the name PaleoRigor instead of "Research Agent".

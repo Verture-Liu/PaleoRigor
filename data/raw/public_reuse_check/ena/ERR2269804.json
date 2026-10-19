@@ -1,0 +1,26 @@
+{
+  "retrieved_at": "2026-10-19T09:53:07+00:00",
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=ERR2269804&result=read_run&fields=run_accession,study_accession,sample_accession,scientific_name,library_layout,library_strategy,library_source,instrument_platform,instrument_model,read_count,base_count,fastq_ftp,fastq_bytes,fastq_md5,submitted_ftp,submitted_bytes,first_public,last_updated&format=json",
+  "records": [
+    {
+      "run_accession": "ERR2269804",
+      "study_accession": "PRJEB24619",
+      "sample_accession": "SAMEA104548046",
+      "scientific_name": "Arabidopsis thaliana",
+      "library_layout": "PAIRED",
+      "library_strategy": "WGS",
+      "library_source": "GENOMIC",
+      "instrument_platform": "ILLUMINA",
+      "instrument_model": "Illumina HiSeq 2000",
+      "read_count": "52276",
+      "base_count": "10559752",
+      "fastq_ftp": "ftp.sra.ebi.ac.uk/vol1/fastq/ERR226/004/ERR2269804/ERR2269804_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR226/004/ERR2269804/ERR2269804_2.fastq.gz",
+      "fastq_bytes": "3859896;4095017",
+      "fastq_md5": "0cbace505383a31ee5307f900f431881;a3175f2dc20ecf1cb645983631b02db1",
+      "submitted_ftp": "ftp.sra.ebi.ac.uk/vol1/run/ERR226/ERR2269804/JK395_U.1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/run/ERR226/ERR2269804/JK395_U.2.fastq.gz",
+      "submitted_bytes": "4008928;4256268",
+      "first_public": "2018-01-27",
+      "last_updated": "2018-11-16"
+    }
+  ]
+}
