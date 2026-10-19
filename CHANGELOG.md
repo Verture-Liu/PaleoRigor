@@ -26,6 +26,13 @@ Repository and documentation clean-up; analysis code, prompts, data and run reco
 - Twelve FastQC archives under `analysis/benchmark_multimodel/v4_pro` are stored through Git LFS like the
   other `.zip` files; their content is unchanged.
 
+- Manuscript figures revised (batch 2c): no slide-style titles inside the figures; Figure 2 calls the comparison arm
+  "Ablated arm", draws the 90% threshold only over the v5 round and spells out "percentage points"; Figures 3–5
+  say "PaleoRigor" instead of "Agent", Figure 3 has non-overlapping labels, a single-hue GC heatmap and a note on
+  missing file types, Figure 4 has a legend for panel C, and Figure 5 no longer claims file identity. Figure 1 and the
+  graphical abstract are redrawn as SVG by `analysis/schematics/`. Figure source data are unchanged; the figure
+  manifests record repository-relative paths.
+
 ### Removed
 - Manuscript drafts, a temporary script and the generated `egg-info` folder are no longer tracked; they remain in the history of earlier releases.
 

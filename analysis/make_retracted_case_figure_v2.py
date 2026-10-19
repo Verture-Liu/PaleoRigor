@@ -50,7 +50,7 @@ def set_style() -> None:
     mpl.rcParams.update(
         {
             "font.family": "sans-serif",
-            "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
+            "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans", "DejaVu Sans", "sans-serif"],
             "svg.fonttype": "none",
             "pdf.fonttype": 42,
             "font.size": 8.2,
@@ -152,7 +152,7 @@ def draw_context(ax: plt.Axes) -> None:
     panel_label(ax, "A")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
-    ax.text(0.00, 0.99, "Boundary-stress question", fontsize=10.4, fontweight="bold", va="top")
+    ax.text(0.00, 0.99, "Expert-defined question", fontsize=10.4, fontweight="bold", va="top")
     ax.text(
         0.00,
         0.865,
@@ -164,13 +164,13 @@ def draw_context(ax: plt.Axes) -> None:
     )
 
     boxes = [
-        (0.02, 0.535, 0.26, 0.155, COLORS["orange_light"], "Retracted\nrecord"),
+        (0.02, 0.535, 0.26, 0.155, COLORS["orange_light"], "Retraction-\nassociated\nrecord"),
         (0.37, 0.535, 0.26, 0.155, COLORS["blue_light"], "Public\nFASTQ"),
         (0.72, 0.535, 0.24, 0.155, COLORS["green_light"], "Source\naudit"),
     ]
     for x, y, w, h, fc, label in boxes:
         rounded(ax, (x, y), w, h, fc)
-        ax.text(x + w / 2, y + h / 2, label, ha="center", va="center", fontsize=7.8, fontweight="bold", linespacing=1.05)
+        ax.text(x + w / 2, y + h / 2, label, ha="center", va="center", fontsize=7.2, fontweight="bold", linespacing=1.0)
     arrow(ax, (0.29, 0.612), (0.37, 0.612))
     arrow(ax, (0.64, 0.612), (0.72, 0.612))
 
@@ -179,11 +179,11 @@ def draw_context(ax: plt.Axes) -> None:
     ax.text(0.07, 0.333, f"{ENA['study']} / {ENA['bioproject']} / {ENA['run']}", fontsize=7.0, color=COLORS["muted"], va="center")
 
     rounded(ax, (0.03, 0.055), 0.90, 0.165, COLORS["panel"])
-    ax.text(0.07, 0.178, "Predefined boundary", fontsize=7.4, fontweight="bold", va="center")
+    ax.text(0.07, 0.178, "Expert-defined boundary", fontsize=7.4, fontweight="bold", va="center")
     ax.text(
         0.07,
         0.115,
-        "verify files and QC outputs;\ndo not rescue the biological claim",
+        "check files and QC outputs;\ndo not reassess the biological claim",
         fontsize=6.65,
         color=COLORS["muted"],
         va="center",
@@ -196,21 +196,21 @@ def draw_comparison(ax: plt.Axes, comp: pd.DataFrame) -> None:
     panel_label(ax, "B")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
-    ax.text(0.00, 0.99, "Published record vs agent output", fontsize=10.4, fontweight="bold", va="top")
-    ax.text(0.00, 0.91, "Direct source-data comparison shows exact file-level reproducibility.", fontsize=7.5, color=COLORS["muted"], va="top")
+    ax.text(0.00, 0.99, "Public record vs PaleoRigor output", fontsize=10.4, fontweight="bold", va="top")
+    ax.text(0.00, 0.91, "Read, base, and compressed-file-size values compared with the public record.", fontsize=7.5, color=COLORS["muted"], va="top")
 
     x_metric, x_pub, x_agent, x_diff = 0.02, 0.38, 0.61, 0.82
-    y_top, row_h = 0.78, 0.118
-    headers = [(x_metric, "Metric"), (x_pub, "Public"), (x_agent, "Agent"), (x_diff, "Difference")]
+    y_top, row_h = 0.735, 0.118
+    headers = [(x_metric, "Metric"), (x_pub, "Public"), (x_agent, "PaleoRigor"), (x_diff, "Difference")]
     for x, label in headers:
-        ax.text(x, y_top + 0.055, label, fontsize=7.2, fontweight="bold", color=COLORS["muted"], va="center")
-    ax.plot([0.02, 0.98], [y_top + 0.025, y_top + 0.025], color=COLORS["grid"], lw=0.8)
+        ax.text(x, y_top + 0.066, label, fontsize=7.2, fontweight="bold", color=COLORS["muted"], va="center")
+    ax.plot([0.02, 0.98], [y_top + 0.042, y_top + 0.042], color=COLORS["grid"], lw=0.8)
 
     for i, row in enumerate(comp.itertuples()):
         y = y_top - i * row_h
         if i % 2 == 0:
             rounded(ax, (0.012, y - 0.048), 0.965, 0.085, "#fbfcfd", ec="#f0f3f6", lw=0.4, radius=0.010)
-        ax.text(x_metric, y, row.metric, fontsize=7.1, va="center")
+        ax.text(x_metric, y, row.metric + (" (bytes)" if row.unit == "bytes" else ""), fontsize=7.1, va="center")
         ax.text(x_pub, y, f"{row.published:,}", fontsize=7.1, va="center", ha="left")
         ax.text(x_agent, y, f"{row.agent:,}", fontsize=7.1, va="center", ha="left", color=COLORS["blue"], fontweight="bold")
         ax.text(x_diff, y, "0", fontsize=7.1, va="center", ha="left", color=COLORS["green"], fontweight="bold")
@@ -219,7 +219,7 @@ def draw_comparison(ax: plt.Axes, comp: pd.DataFrame) -> None:
     ax.text(
         0.50,
         0.082,
-        "All five source-level checks matched exactly",
+        "All five metadata checks matched",
         ha="center",
         va="center",
         fontsize=7.7,
@@ -229,7 +229,7 @@ def draw_comparison(ax: plt.Axes, comp: pd.DataFrame) -> None:
 
 
 def draw_qc(ax: plt.Axes, df: pd.DataFrame) -> None:
-    ax.text(-0.035, 1.135, "C", transform=ax.transAxes, fontsize=12, fontweight="bold", va="bottom")
+    ax.text(-0.035, 1.045, "C", transform=ax.transAxes, fontsize=12, fontweight="bold", va="bottom")
     mates = list(df["mate"])
     x = range(len(mates))
     width = 0.34
@@ -249,7 +249,6 @@ def draw_qc(ax: plt.Axes, df: pd.DataFrame) -> None:
     ax2.set_ylabel("Mean read length (bp)", color=COLORS["gold"])
     ax.tick_params(axis="y", colors=COLORS["blue"])
     ax2.tick_params(axis="y", colors=COLORS["gold"])
-    ax.set_title("QC outputs generated from the same files", fontsize=10.0, pad=13)
     ax.grid(axis="y", color=COLORS["grid"], lw=0.6)
 
     malformed = int(df["malformed_records"].sum())
@@ -257,7 +256,7 @@ def draw_qc(ax: plt.Axes, df: pd.DataFrame) -> None:
     ax.text(
         0.50,
         -0.25,
-        f"Malformed records: {malformed}; max N fraction: {n_fraction:.0e}",
+        "Malformed records: {}; maximum N-fraction: {} × 10$^{{{}}}$".format(malformed, f"{n_fraction:.0e}".split("e")[0], int(f"{n_fraction:.0e}".split("e")[1])),
         transform=ax.transAxes,
         ha="center",
         va="top",
@@ -271,16 +270,16 @@ def draw_boundary(ax: plt.Axes) -> None:
     panel_label(ax, "D")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
-    ax.text(0.00, 0.99, "What the agent demonstrates", fontsize=10.4, fontweight="bold", va="top")
-    ax.text(0.00, 0.90, "The output is useful because it is bounded, not because it overclaims.", fontsize=7.4, color=COLORS["muted"], va="top")
+    ax.text(0.00, 0.99, "Permitted conclusion", fontsize=10.4, fontweight="bold", va="top")
+    ax.text(0.00, 0.90, "Scope set by the expert; PaleoRigor did not detect the retraction itself.", fontsize=7.4, color=COLORS["muted"], va="top")
 
-    rounded(ax, (0.02, 0.42), 0.45, 0.36, COLORS["green_light"], ec="#cfe8d6")
-    rounded(ax, (0.53, 0.42), 0.45, 0.36, COLORS["orange_light"], ec="#edd0c3")
-    ax.text(0.055, 0.735, "CAN verify", fontsize=8.0, fontweight="bold", color=COLORS["green"])
-    ax.text(0.565, 0.735, "CANNOT claim", fontsize=8.0, fontweight="bold", color=COLORS["orange"])
+    rounded(ax, (0.02, 0.35), 0.45, 0.43, COLORS["green_light"], ec="#cfe8d6")
+    rounded(ax, (0.53, 0.35), 0.45, 0.43, COLORS["orange_light"], ec="#edd0c3")
+    ax.text(0.055, 0.735, "Supported by the files", fontsize=8.0, fontweight="bold", color=COLORS["green"])
+    ax.text(0.565, 0.735, "Not supported", fontsize=8.0, fontweight="bold", color=COLORS["orange"])
 
-    can = ["file identity", "paired-end structure", "read/base/file metadata", "QC report provenance"]
-    cannot = ["retracted conclusion", "ancient authenticity", "contamination source", "biological mechanism"]
+    can = ["read, base, and file-size agreement", "paired-end structure", "descriptive QC values", "QC report provenance"]
+    cannot = ["byte-level file identity", "the retracted conclusion", "ancient authenticity", "contamination source", "biological mechanism"]
     for i, item in enumerate(can):
         y = 0.675 - i * 0.070
         ax.text(0.065, y, f"• {item}", fontsize=7.0, va="center", color=COLORS["ink"])
@@ -288,11 +287,11 @@ def draw_boundary(ax: plt.Axes) -> None:
         y = 0.675 - i * 0.070
         ax.text(0.575, y, f"• {item}", fontsize=7.0, va="center", color=COLORS["ink"])
 
-    rounded(ax, (0.08, 0.18), 0.84, 0.115, COLORS["blue_light"], ec="#cddfe6")
+    rounded(ax, (0.08, 0.14), 0.84, 0.115, COLORS["blue_light"], ec="#cddfe6")
     ax.text(
         0.50,
-        0.237,
-        "Result: source-data reproducibility = PASS;\nclaim-level interpretation = expert-gated",
+        0.197,
+        "Result: file-level checks matched;\nbiological interpretation left to the expert",
         ha="center",
         va="center",
         fontsize=7.8,
@@ -335,18 +334,13 @@ def main() -> None:
     draw_qc(ax_c, df)
     draw_boundary(ax_d)
 
-    fig.suptitle(
-        "Task 3 | Boundary-aware audit of a retraction-associated FASTQ record",
-        fontsize=12.2,
-        fontweight="bold",
-    )
     paths = save(fig, OUT / "task3_boundary_aware_source_audit")
     plt.close(fig)
 
     manifest = {
-        "figure_files": [str(p) for p in paths],
-        "source_data": str(OUT / "task3_public_vs_agent_source_data.csv"),
-        "main_claim": "The agent exactly reproduced source-level public metadata while gating biological interpretation.",
+        "figure_files": [str(p.relative_to(ROOT)) for p in paths],
+        "source_data": str((OUT / "task3_public_vs_agent_source_data.csv").relative_to(ROOT)),
+        "main_claim": "PaleoRigor reproduced the public read, base and compressed-file-size metadata; biological interpretation was left to the expert.",
     }
     (OUT / "task3_boundary_aware_source_audit_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(json.dumps(manifest, indent=2))

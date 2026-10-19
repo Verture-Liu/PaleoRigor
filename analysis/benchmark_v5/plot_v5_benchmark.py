@@ -90,7 +90,7 @@ def main() -> None:
     mpl.rcParams.update(
         {
             "font.family": "sans-serif",
-            "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
+            "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans", "DejaVu Sans", "sans-serif"],
             "svg.fonttype": "none",
             "pdf.fonttype": 42,
             "font.size": 8.2,
@@ -118,8 +118,9 @@ def main() -> None:
     raw = np.array([summaries[v]["arms"]["raw_llm"]["rate"] * 100 for v in versions])
     ax_a.axvspan(-0.38, 1.38, color="#F3F4F5", zorder=0)
     ax_a.axvspan(1.62, 2.38, color=GREEN_LIGHT, zorder=0)
-    ax_a.axhline(90, color="#7A838B", lw=1, ls=(0, (4, 3)), zorder=1)
-    ax_a.plot(x, raw, color=GRAY, marker="o", ms=5, lw=1.6, label="Raw-model control", zorder=3)
+    # the 90% threshold was prespecified for the frozen v5 round only
+    ax_a.hlines(90, 1.62, 2.38, color="#7A838B", lw=1, ls=(0, (4, 3)), zorder=1)
+    ax_a.plot(x, raw, color=GRAY, marker="o", ms=5, lw=1.6, label="Ablated arm", zorder=3)
     ax_a.plot(x, paleo, color=BLUE, marker="o", ms=5.5, lw=2.0, label="PaleoRigor", zorder=4)
     ax_a.text(0, 72.9, "18/24 both", ha="center", va="top", color="#616B74", fontsize=7.2)
     for xi, yi, count in zip(x[1:], paleo[1:], ("18/24", "23/24")):
@@ -127,9 +128,9 @@ def main() -> None:
     for xi, yi, count in zip(x[1:], raw[1:], ("21/24", "19/24")):
         ax_a.text(xi, yi + 2.0, count, ha="center", va="bottom", color="#616B74", fontsize=7.2)
     ax_a.text(0.5, 103.0, "development qualification", ha="center", va="bottom", color="#68727B", fontsize=7.4)
-    ax_a.text(2, 103.0, "final held-out", ha="center", va="bottom", color=GREEN, fontsize=7.4, fontweight="bold")
-    ax_a.text(-0.38, 90.7, "prespecified 90% threshold", ha="left", va="bottom", fontsize=6.9, color="#68727B", bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.82, "pad": 0.8})
-    ax_a.set(title="Versioned strict-success trajectory", ylabel="Strict success (%)", xticks=x, xticklabels=["v3", "v4", "v5"], ylim=(68, 107), xlim=(-0.45, 2.45))
+    ax_a.text(2, 103.0, "frozen held-out", ha="center", va="bottom", color=GREEN, fontsize=7.4, fontweight="bold")
+    ax_a.text(2.36, 89.2, "prespecified\n>90% threshold", ha="right", va="top", fontsize=6.4, color="#68727B", linespacing=1.0)
+    ax_a.set(ylabel="Strict success (%)", xticks=x, xticklabels=["v3", "v4", "v5"], ylim=(68, 107), xlim=(-0.45, 2.45))
     ax_a.set_yticks([70, 80, 90, 100])
     ax_a.grid(axis="y", color=GRID, lw=0.8)
     ax_a.legend(
@@ -144,7 +145,7 @@ def main() -> None:
     panel_label(ax_a, "A")
 
     # B: final overall comparison with Wilson intervals.
-    labels = ["PaleoRigor", "Raw model"]
+    labels = ["PaleoRigor", "Ablated arm"]
     arms = ["paleorigor", "raw_llm"]
     colors = [BLUE, GRAY]
     y = np.array([1, 0])
@@ -153,12 +154,12 @@ def main() -> None:
         rate = values["rate"] * 100
         lo, hi = (value * 100 for value in values["wilson_95"])
         ax_b.errorbar(rate, yi, xerr=[[rate - lo], [hi - rate]], fmt="o", ms=7, color=color, ecolor=color, elinewidth=2, capsize=3, zorder=3)
-        ax_b.text(rate, yi + 0.18, f'{values["successes"]}/{values["total"]} ({rate:.1f}%)', ha="center", va="bottom", fontsize=7.4, color=TEXT, fontweight="bold" if arm == "paleorigor" else "normal")
+        ax_b.text(rate, yi + 0.18, f'{values["successes"]}/{values["total"]} ({rate:.1f}%)', ha="center", va="bottom", fontsize=7.4, color=TEXT, fontweight="bold" if arm == "paleorigor" else "normal", bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.6}, zorder=4)
     ax_b.axvline(90, color="#7A838B", lw=1, ls=(0, (4, 3)))
-    ax_b.set(title="Final v5 evaluation", xlabel="Strict success (%)", yticks=y, yticklabels=labels, xlim=(50, 103), ylim=(-0.55, 1.55))
+    ax_b.set(xlabel="Strict success (%)", yticks=y, yticklabels=labels, xlim=(50, 103), ylim=(-1.05, 1.55))
     ax_b.set_xticks([50, 60, 70, 80, 90, 100])
     ax_b.grid(axis="x", color=GRID, lw=0.8)
-    ax_b.text(0.03, 0.055, "Difference +16.7 pp\nexact McNemar p = 0.219", transform=ax_b.transAxes, fontsize=6.9, color="#59636C", va="bottom")
+    ax_b.text(0.03, 0.055, "Paired difference +16.7\npercentage points;\nexact McNemar p = 0.219", transform=ax_b.transAxes, fontsize=6.9, color="#59636C", va="bottom")
     panel_label(ax_b, "B")
 
     # C: scenario-level results expose where the remaining failures occurred.
@@ -181,7 +182,7 @@ def main() -> None:
     ax_c.axvline(3.5, color="#AEB6BD", lw=0.8)
     ax_c.text(1.5, -0.64, "supported workflows", ha="center", va="bottom", fontsize=7.5, color="#59636C")
     ax_c.text(5.5, -0.64, "boundary decisions", ha="center", va="bottom", fontsize=7.5, color="#59636C")
-    ax_c.set(title="Final v5 performance by scenario", xticks=np.arange(8), xticklabels=scenario_labels, yticks=[0, 1], yticklabels=["PaleoRigor", "Raw model"])
+    ax_c.set(xticks=np.arange(8), xticklabels=scenario_labels, yticks=[0, 1], yticklabels=["PaleoRigor", "Ablated arm"])
     ax_c.tick_params(axis="x", length=0, pad=5)
     ax_c.tick_params(axis="y", length=0, pad=6)
     for spine in ax_c.spines.values():

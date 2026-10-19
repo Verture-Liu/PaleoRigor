@@ -1,17 +1,17 @@
 {
   "figures": [
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task1_peptide_csv_curation.png",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task1_peptide_csv_curation.pdf",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task1_peptide_csv_curation.svg",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task2_fastq_source_qc.png",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task2_fastq_source_qc.pdf",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task2_fastq_source_qc.svg",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task3_audit_interpretation.png",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task3_audit_interpretation.pdf",
-    "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task3_audit_interpretation.svg"
+    "figures/manuscript/dataset_cases/task1_peptide_csv_curation.png",
+    "figures/manuscript/dataset_cases/task1_peptide_csv_curation.pdf",
+    "figures/manuscript/dataset_cases/task1_peptide_csv_curation.svg",
+    "figures/manuscript/dataset_cases/task2_fastq_source_qc.png",
+    "figures/manuscript/dataset_cases/task2_fastq_source_qc.pdf",
+    "figures/manuscript/dataset_cases/task2_fastq_source_qc.svg",
+    "figures/manuscript/dataset_cases/task3_audit_interpretation.png",
+    "figures/manuscript/dataset_cases/task3_audit_interpretation.pdf",
+    "figures/manuscript/dataset_cases/task3_audit_interpretation.svg"
   ],
   "tables": {
-    "peptide": "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task1_peptide_summary.csv",
-    "fastq": "/Users/tianaoliu/Documents/vscode/2026summerproject/Final data/task_grouped_figures/task2_fastq_summary.csv"
+    "peptide": "figures/manuscript/dataset_cases/task1_peptide_summary.csv",
+    "fastq": "figures/manuscript/dataset_cases/task2_fastq_summary.csv"
   }
 }

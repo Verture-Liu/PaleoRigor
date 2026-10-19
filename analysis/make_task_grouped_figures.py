@@ -36,7 +36,7 @@ def set_style() -> None:
     mpl.rcParams.update(
         {
             "font.family": "sans-serif",
-            "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
+            "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans", "DejaVu Sans", "sans-serif"],
             "svg.fonttype": "none",
             "pdf.fonttype": 42,
             "font.size": 8,
@@ -108,18 +108,17 @@ def task1_peptide_figure() -> list[Path]:
     ax3 = fig.add_subplot(gs[:, 2])
 
     strip(ax0)
-    panel_label(ax0, "A")
+    panel_label(ax0, "A", x=-0.02, y=1.0)
     ax0.set_xlim(0, 1)
     ax0.set_ylim(0, 1)
-    ax0.text(0.00, 0.96, "Peptide CSV curation", fontsize=10, fontweight="bold", va="top")
     steps = [
-        ("Raw table", f"{len(raw):,} rows"),
+        ("Input table", f"{len(raw):,} rows"),
         ("Normalize", "label + sequence"),
         ("Validate", "canonical amino acids"),
         ("Deduplicate", f"{len(raw) - len(cleaned):,} removed"),
-        ("Export", f"{len(cleaned):,} cleaned rows"),
+        ("Export", f"{len(cleaned):,} unique records"),
     ]
-    ys = np.linspace(0.78, 0.18, len(steps))
+    ys = np.linspace(0.90, 0.10, len(steps))
     for i, ((title, sub), y) in enumerate(zip(steps, ys)):
         box = FancyBboxPatch((0.08, y - 0.045), 0.72, 0.075, boxstyle="round,pad=0.012,rounding_size=0.018", fc="#f7fbfc", ec=COLORS["grid"], lw=0.8)
         ax0.add_patch(box)
@@ -128,14 +127,14 @@ def task1_peptide_figure() -> list[Path]:
         if i < len(ys) - 1:
             ax0.add_patch(FancyArrowPatch((0.44, y - 0.055), (0.44, ys[i + 1] + 0.045), arrowstyle="-|>", mutation_scale=9, color=COLORS["paper"], lw=0.9))
 
-    panel_label(ax1, "B", x=-0.13, y=1.15)
-    stages = ["raw", "cleaned"]
+    panel_label(ax1, "B", x=-0.30, y=1.02)
+    stages = ["input", "cleaned"]
     values = [len(raw), len(cleaned)]
     ax1.plot(stages, values, color=COLORS["grid"], lw=2, zorder=1)
     ax1.scatter(stages, values, s=[80, 90], color=[COLORS["paper"], COLORS["agent"]], edgecolor="white", linewidth=0.8, zorder=3)
     for x, v in zip(stages, values):
-        xytext = (8, 8) if x == "raw" else (0, 8)
-        ha = "left" if x == "raw" else "center"
+        xytext = (8, 8) if x == "input" else (0, 8)
+        ha = "left" if x == "input" else "center"
         ax1.annotate(
             f"{v:,}",
             (x, v),
@@ -145,38 +144,37 @@ def task1_peptide_figure() -> list[Path]:
             va="bottom",
             fontsize=7.5,
         )
-    ax1.text(0.5, min(values) - max(values) * 0.16, f"{len(raw)-len(cleaned):,} duplicate rows removed", ha="center", color=COLORS["accent"], fontsize=7.5)
+    ax1.text(0.5, max(values) * 1.055, f"{len(raw)-len(cleaned):,} duplicate entries removed", ha="center", va="center", color=COLORS["accent"], fontsize=7.2)
     ax1.set_ylim(min(values) * 0.92, max(values) * 1.08)
     ax1.set_ylabel("Rows")
-    ax1.set_title("Expected curation change", fontsize=9, pad=11)
     ax1.grid(axis="y", color=COLORS["grid"], lw=0.6)
 
-    panel_label(ax2, "C", x=-0.13, y=1.15)
+    panel_label(ax2, "C", x=-0.30, y=1.02)
     labels = sorted(set(raw_counts.index).union(clean_counts.index))
     y = np.arange(len(labels))
     for yi, label in zip(y, labels):
         rv = raw_counts.get(label, 0)
         cv = clean_counts.get(label, 0)
         ax2.plot([rv, cv], [yi, yi], color=COLORS["grid"], lw=2)
-        ax2.scatter(rv, yi, s=42, color=COLORS["paper"], zorder=3)
-        ax2.scatter(cv, yi, s=42, color=COLORS["agent"], zorder=3)
-        ax2.text(max(raw_counts.max(), clean_counts.max()) * 1.03, yi, f"label {label}", va="center", fontsize=7.5)
-    ax2.set_yticks([])
+        ax2.scatter(rv, yi, s=42, color=COLORS["paper"], zorder=3, label="input table" if yi == y[0] else None)
+        ax2.scatter(cv, yi, s=30, color=COLORS["agent"], zorder=4, label="cleaned table" if yi == y[0] else None)
+    ax2.set_yticks(y)
+    ax2.set_yticklabels([f"label {label}" for label in labels])
+    ax2.set_ylim(-0.6, len(labels) - 0.4)
+    ax2.set_xlim(0, max(raw_counts.max(), clean_counts.max()) * 1.12)
+    ax2.legend(fontsize=6.6, loc="center right", frameon=False)
     ax2.set_xlabel("Peptides")
-    ax2.set_title("Class balance retained", fontsize=9, pad=11)
     ax2.grid(axis="x", color=COLORS["grid"], lw=0.6)
 
-    panel_label(ax3, "D", x=-0.08, y=1.08)
+    panel_label(ax3, "D", x=-0.16, y=1.01)
     bins = np.arange(min(raw_lengths.min(), clean_lengths.min()), max(raw_lengths.max(), clean_lengths.max()) + 2)
-    ax3.hist(raw_lengths, bins=bins, density=True, histtype="stepfilled", alpha=0.28, color=COLORS["paper"], label="raw")
-    ax3.hist(clean_lengths, bins=bins, density=True, histtype="step", lw=2.0, color=COLORS["agent"], label="cleaned")
-    ax3.set_xlabel("Peptide length")
+    ax3.hist(raw_lengths, bins=bins, density=True, histtype="stepfilled", alpha=0.28, color=COLORS["paper"], label="input table")
+    ax3.hist(clean_lengths, bins=bins, density=True, histtype="step", lw=2.0, color=COLORS["agent"], label="cleaned table")
+    ax3.set_xlabel("Peptide length (residues)")
     ax3.set_ylabel("Density")
-    ax3.set_title("Length distribution preserved after cleaning", fontsize=9, pad=11)
     ax3.grid(axis="y", color=COLORS["grid"], lw=0.6)
     ax3.legend(fontsize=7)
 
-    fig.suptitle("Task 1 | Peptide-table curation produces a non-redundant validation table", fontsize=12, fontweight="bold")
     return save(fig, OUT / "task1_peptide_csv_curation")
 
 
@@ -205,66 +203,71 @@ def task2_fastq_figure() -> list[Path]:
     ax2 = fig.add_subplot(gs[:, 2])
     ax3 = fig.add_subplot(gs[1, :2])
 
-    panel_label(ax0, "A", x=-0.18, y=1.20)
+    panel_label(ax0, "A", x=-0.30, y=1.02)
     minv = min(rs["ena_read_count"].min(), rs["agent_total"].min())
     maxv = max(rs["ena_read_count"].max(), rs["agent_total"].max())
     ax0.plot([minv, maxv], [minv, maxv], color=COLORS["grid"], lw=1.4)
     ax0.scatter(rs["ena_read_count"], rs["agent_total"], s=54, color=COLORS["agent"], edgecolor="white", linewidth=0.8, zorder=3)
     offsets = {
-        "ERR15682270": (10, 12),
-        "ERR15682267": (10, 12),
-        "ERR10114861": (-42, -14),
-        "ERR3250149": (8, -12),
+        "ERR15682270": (13, -3),
+        "ERR15682267": (11, 9),
+        "ERR10114877": (8, -9),
+        "ERR10114867": (-8, 6),
+        "ERR10114861": (-9, -12),
+        "ERR3250149": (-9, 7),
     }
     for row in rs.itertuples():
         dx, dy = offsets.get(row.run, (7, 3))
         ax0.annotate(
-            row.run.replace("ERR", ""),
+            row.run,
             (row.ena_read_count, row.agent_total),
             xytext=(dx, dy),
             textcoords="offset points",
-            fontsize=6.5,
+            fontsize=6.0,
             ha="right" if dx < 0 else "left",
             bbox=dict(boxstyle="round,pad=0.10", fc="white", ec="none", alpha=0.72),
             arrowprops=dict(arrowstyle="-", color=COLORS["paper"], lw=0.45, shrinkA=0, shrinkB=4),
         )
     ax0.set_xscale("log")
     ax0.set_yscale("log")
-    ax0.set_xlabel("Published ENA read count")
-    ax0.set_ylabel("Agent total sequences")
-    ax0.set_title("Read counts match public records", fontsize=9, pad=14)
+    ax0.set_xlabel("Public read count")
+    ax0.set_ylabel("Local read count")
     ax0.grid(color=COLORS["grid"], lw=0.6, which="both")
 
-    panel_label(ax1, "B", x=-0.18, y=1.20)
+    panel_label(ax1, "B", x=-0.10, y=1.02)
     y = np.arange(len(rs))[::-1]
     ax1.axvline(1.0, color=COLORS["grid"], lw=1.5)
-    ax1.scatter(rs["byte_ratio"], y, s=55, color=COLORS["paper"], edgecolor="white", linewidth=0.8, zorder=3)
+    ax1.scatter(rs["byte_ratio"], y, s=55, color=COLORS["agent"], edgecolor="white", linewidth=0.8, zorder=3)
     for yi, row in zip(y, rs.itertuples()):
         ax1.text(1.003, yi, row.run, fontsize=6.7, va="center")
     ax1.set_xlim(0.995, 1.012)
     ax1.set_yticks([])
-    ax1.set_xlabel("Local bytes / ENA bytes")
-    ax1.set_title("Local files match source files", fontsize=9, pad=14)
+    ax1.set_xlabel("Rbytes (local / public size)")
     ax1.grid(axis="x", color=COLORS["grid"], lw=0.6)
 
-    panel_label(ax2, "C", x=-0.08, y=1.08)
+    panel_label(ax2, "C", x=-0.42, y=1.01)
     matrix = df.pivot_table(index="run", columns="mate", values="gc_for_plot", aggfunc="mean")
     matrix = matrix.reindex(rs["run"])
-    im = ax2.imshow(matrix, aspect="auto", cmap="copper", vmin=35, vmax=90)
+    from matplotlib.colors import LinearSegmentedColormap
+    gc_cmap = LinearSegmentedColormap.from_list("gc_blue", ["#eef4f7", "#8fb5c9", "#214f69"])
+    gc_cmap.set_bad("#f5f5f5")
+    im = ax2.imshow(np.ma.masked_invalid(matrix.to_numpy(dtype=float)), aspect="auto", cmap=gc_cmap, vmin=40, vmax=90)
     ax2.set_xticks(np.arange(matrix.shape[1]))
-    ax2.set_xticklabels(matrix.columns)
+    ax2.set_xticklabels(["single-end" if c == "single" else c for c in matrix.columns])
     ax2.set_yticks(np.arange(matrix.shape[0]))
     ax2.set_yticklabels(matrix.index, fontsize=7)
     for i in range(matrix.shape[0]):
         for j in range(matrix.shape[1]):
             value = matrix.iloc[i, j]
-            if not np.isnan(value):
-                ax2.text(j, i, f"{value:.1f}", ha="center", va="center", fontsize=6.8, color="white" if value > 60 else COLORS["ink"])
-    ax2.set_title("R1/R2 GC% is reported as a QC metric", fontsize=9, pad=11)
+            if np.isnan(value):
+                ax2.text(j, i, "–", ha="center", va="center", fontsize=7.5, color=COLORS["muted"])
+            else:
+                ax2.text(j, i, f"{value:.1f}", ha="center", va="center", fontsize=6.8, color="white" if value > 68 else COLORS["ink"])
+    ax2.text(0.0, -0.075, "– no file of this type: ERR3250149 is single-end;\n   the other records are paired-end (R1, R2).", transform=ax2.transAxes, fontsize=6.2, color=COLORS["muted"], va="top")
     cbar = fig.colorbar(im, ax=ax2, fraction=0.035, pad=0.02)
     cbar.set_label("GC (%)")
 
-    panel_label(ax3, "D", x=-0.08, y=1.10)
+    panel_label(ax3, "D", x=-0.13, y=1.02)
     y2 = np.arange(len(rs))[::-1]
     ax3.set_xscale("log")
     jitter = 0.09
@@ -284,7 +287,7 @@ def task2_fastq_figure() -> list[Path]:
             edgecolor="white",
             linewidth=0.8,
             zorder=3,
-            label="Published ENA" if yi == y2[0] else None,
+            label="Public (ENA/SRA)" if yi == y2[0] else None,
         )
         ax3.scatter(
             row.agent_total,
@@ -294,16 +297,14 @@ def task2_fastq_figure() -> list[Path]:
             edgecolor="white",
             linewidth=0.8,
             zorder=3,
-            label="Agent FastQC" if yi == y2[0] else None,
+            label="Local (PaleoRigor)" if yi == y2[0] else None,
         )
-        ax3.text(row.agent_total * 1.08, yi, row.run.replace("ERR", ""), va="center", fontsize=6.7)
+        ax3.text(row.agent_total * 1.08, yi, row.run, va="center", fontsize=6.4)
     ax3.set_yticks([])
     ax3.set_xlabel("Read count")
-    ax3.set_title("Published read counts and Agent outputs overlap", fontsize=9, pad=12)
     ax3.grid(axis="x", color=COLORS["grid"], lw=0.6, which="both")
     ax3.legend(fontsize=6.7, loc="upper right", framealpha=0.94)
 
-    fig.suptitle("Task 2 | Sequencing source-data checks verify traceable input handling", fontsize=12, fontweight="bold")
     return save(fig, OUT / "task2_fastq_source_qc")
 
 
@@ -372,7 +373,7 @@ def write_tables() -> dict[str, str]:
     p2 = OUT / "task2_fastq_summary.csv"
     peptide.to_csv(p1, index=False)
     fastq.to_csv(p2, index=False)
-    return {"peptide": str(p1), "fastq": str(p2)}
+    return {"peptide": str(p1.relative_to(ROOT)), "fastq": str(p2.relative_to(ROOT))}
 
 
 def main() -> None:
@@ -383,7 +384,7 @@ def main() -> None:
     figures.extend(task2_fastq_figure())
     figures.extend(task3_audit_figure())
     tables = write_tables()
-    manifest = {"figures": [str(p) for p in figures], "tables": tables}
+    manifest = {"figures": [str(p.relative_to(ROOT)) for p in figures], "tables": tables}
     (OUT / "task_grouped_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(json.dumps(manifest, indent=2))
 
