@@ -472,7 +472,7 @@ def test_about_returns_the_pinned_tool_manifest(tmp_path):
 
     assert response.status_code == 200
     assert response.json() == {
-        "version": "0.2.1",
+        "version": "0.2.3",
         "github_url": "https://github.com/Verture-Liu/PaleoRigor",
         "tools": [
             {"id": "fastqc", "version": "0.12.1"},

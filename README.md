@@ -16,12 +16,13 @@ PaleoRigor prepares and documents data before specialist analysis. It does not a
 | --- | --- | --- |
 | macOS 13 or later, Apple Silicon | [`paleorigor/PaleoRigor-dev-arm64.dmg`](paleorigor/) | All results in the paper were produced on macOS |
 | Windows 10/11 x64 | [`paleorigor/windows/PaleoRigor-Setup.exe`](paleorigor/windows/) | Verified by its automated build and tool-identity checks |
+| Linux | Not available | Not supported in this release (see below) |
 
 Both installers bundle the analysis tools (FastQC, MultiQC, SeqKit, seqtk, Samtools, BWA and Bowtie 2) and their runtimes. Checksums and installation notes are in [`paleorigor/README.md`](paleorigor/README.md).
 
 ## Run from source
 
-Requires Python 3.11–3.13.
+Requires Python 3.11–3.13 on macOS or Windows. Linux is not supported in this release: the application stores the model API key only in macOS Keychain or Windows Credential Manager. When running from source, the analysis tools (FastQC, MultiQC, SeqKit, seqtk, Samtools, BWA, Bowtie 2) must be installed on `PATH` or in Conda environments.
 
 ```bash
 git clone https://github.com/Verture-Liu/PaleoRigor.git
@@ -32,7 +33,7 @@ pip install -e .
 research-agent
 ```
 
-The application opens in your browser on a local address. The planning model is reached through an OpenAI-compatible API: enter the endpoint, model and your own key in the application's settings, or set them as the environment variables listed in `.env.example`. Only the request and summaries of the uploaded files are sent to the model; the data files are analysed on your computer.
+The application opens in your browser on a local address. The planning model is reached through an OpenAI-compatible API: enter the endpoint, model and your own key in the application's settings. (`.env.example` is read only by the benchmark scripts under `analysis/`, not by the application.) Only the request and summaries of the uploaded files are sent to the model; the data files are analysed on your computer.
 
 Run the tests with `pytest tests`.
 
